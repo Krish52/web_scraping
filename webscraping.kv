@@ -1,0 +1,79 @@
+SearchUrl:
+
+<SearchUrl>:
+    orientation: "vertical"
+    search_input: search_box
+    filename_input: search_box2
+    BoxLayout:
+        height: "40dp"
+        size_hint_y: None
+        Label:
+            text: "Please use the url from: 'ebay' or 'BestBuy' or 'newegg' or 'Flipkart'"
+            size_hint_x: 30
+    BoxLayout:
+        height: "40dp"
+        size_hint_y: None
+        Label:
+            text: "URL:"
+            size_hint_x: 10
+        TextInput:
+            id: search_box
+            size_hint_x: 90
+    BoxLayout:
+        height: "40dp"
+        size_hint_y: None
+        Label:
+            text:"Filename:"
+            size_hint_x: 10
+        TextInput:
+            id: search_box2
+            size_hint_x: 80
+        Button:
+            text: "Clear"
+            size_hint_x: 10
+            on_press:root.text_clear()
+    BoxLayout:
+        height: "40dp"
+        size_hint_y: None
+        Label:
+            text:""
+            size_hint_x: 30
+        Button:
+            text: "Extract"
+            size_hint_x: 20
+            on_press: root.search_url()
+        Button:
+            text: "Close"
+            size_hint_x: 20
+            on_press: app.stop()
+        Label:
+            text:""
+            size_hint_x: 30
+
+<siteErrorPopup>:
+    size_hint: .8, .5
+    title: "Site Error"
+    BoxLayout:
+        height: "40dp"
+        Label:
+            text:"Please Copy the url only from: 'ebay' or 'BestBuy' or 'newegg' or 'Flipkart'"
+            size_hint_x:8
+        Button:
+            text: "Close"
+            size_hint_x:2
+            size_hint_y:.1
+            on_press: root.dismiss()
+
+<UrlErrorPopup>:
+    size_hint: .5, .5
+    title: "URL Error"
+    BoxLayout:
+        height: "40dp"
+        Label:
+            text:"Please enter a valid URL"
+            size_hint_x:8
+        Button:
+            text: "Close"
+            size_hint_x:2
+            size_hint_y:.1
+            on_press: root.dismiss()
